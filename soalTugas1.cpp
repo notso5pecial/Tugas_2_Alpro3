@@ -1,17 +1,44 @@
-/*
-Capt Dodo memiliki beberapa pilihan transportasi untuk bepergian dari tempat magang ke kampus dan kembali lagi:
+#include <iostream>
+using namespace std;
 
-- Bus Hijau: Biaya Rp5.000. Beroperasi dari pukul 7 -18.
-- Bus Linus : Gratis, tetapi hanya tersedia pada pukul 6 - 8 dan 15 - 17.
-- Angkot: Biaya Rp10.000. Selalu tersedia tanpa batasan waktu.
+int main(){
+    int jam_berangkat, jam_pulang; // deklarasi variabel untuk menyimpan jam dan biaya
+    float biaya;
 
-Karena Capt dodo adalah seorang anak kos, ia ingin menghemat pengeluaran transportasi semaksimal mungkin. 
+    cout<<"moda irit tranportasi \n"; // output judul program
+    cout<<"input jam beranangkat anda (24jam): \n";// input jam berangkat dari user
+    cin>>jam_berangkat;
+    cout<<"input jam pulang anda (24 jam): \n"; // input jam pulang dari user
+    cin>>jam_pulang;
 
-Diberikan dua input, yaitu:
-Jam keberangkatan (bilangan bulat 1-24)
-Jam kepulangan (bilangan bulat 1-24)
-
-Buatlah program untuk menentukan moda transportasi yang dipilih untuk berangkat dan pulang dengan total biaya seminimal mungkin. 
-*/
-
-// Hapus komentar yang berisi soal sebelum memasukkan kode untuk jawaban
+    if (jam_berangkat > 5 && jam_berangkat < 9 && jam_pulang > 14 && jam_pulang < 18){
+        cout<<"anda bisa bertranportasi bus linus";
+        biaya = 0;
+        cout<< "biaya Rp"<<biaya; // kondisi: berangkat pagi (6-8) dan pulang sore (15-17)
+    }
+    else if (jam_berangkat > 5 && jam_berangkat < 9 && jam_pulang <= 18){
+        cout<<"anda bisa berangkat dengan bus linus & pulang dengan bus hijau";
+        biaya = 5000;
+        cout<< " biaya Rp"<<biaya; // kondisi: berangkat pagi, pulang maksimal jam 18
+    }
+    else if (jam_berangkat > 5 && jam_berangkat < 9 && jam_pulang > 18){
+        cout<<"anda bisa berangkat dengan bus linus & pulang dengan angkot";
+        biaya = 10000;
+        cout<< " biaya Rp"<<biaya; //berangkat pagi, pulang malam (>18)
+    }
+    else if (jam_berangkat > 8 && jam_pulang <= 18){
+        cout<<"anda bisa bertransportasi bus hijau";
+        biaya = 5000;
+        cout<<" biaya Rp"<<biaya; // kondisi: berangkat agak siang (>8) dan pulang <=18
+    }
+    else if (jam_berangkat > 8 && jam_pulang > 18){
+        cout<<"anda bisa berangkat dengan bus hijau & pulang dengan angkot";
+        biaya = 15000;
+        cout<<" biaya Rp"<<biaya;} //berangkat siang dan pulang malam
+    else{
+        cout<<"anda bisa bertransportasi angkot";
+        biaya = 20000;
+        cout<<" biaya Rp"<<biaya; // kondisi lainnya
+    }
+    system ("pause");//menahan layar console supaya tidak langsung tertutup
+}
