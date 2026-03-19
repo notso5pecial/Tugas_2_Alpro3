@@ -58,7 +58,7 @@ int main () {
 }
 
 /*
-=== Penjelasan Logika ===
+Penjelasan Logika:
 
 1. Deklarasi Variabel
    - berat, biaya, diskon, total → float karena bisa mengandung desimal (misal 2.5 Kg)
